@@ -1,48 +1,33 @@
 ---
 layout: post
-title:  "get Month Name [CF]"
-date:   2016-06-11 03:43:45 +0700
-categories: [python, codefights]
+title:  "Django REST with React: setting up React and webpack"
+date:   2019-05-20 23:43:45 +0700
+categories: [python, django, react]
 ---
 
-Map the given integer to a month.
+The sweet spot for Django and React is Django REST framework for providing API endpoints.
 
-**Example:**
+With React in its own app called “frontend”.
 
+We already know how to create a Django app so let’s do it again:
+
+**Create A new app for React**
+
+
+```console
+	django-admin startapp frontend
+```
 * For `mo = 1`, the output should be `getMonthName(mo) = "Jan"`,
 * For `mo = 0`, the output should be `getMonthName(mo) = "invalid month"`.
 
-**Input/Output**
+Let’s also prepare a directory structure for holding the React components:
 
-* [time limit] 4000ms (py)
-* [input] integer mo (A non-negative integer).
-* **Constraints:** `0 ≤ mo ≤ 15`.
-* **[output] string**
+```console
+	mkdir -p ./frontend/src/components
+```
+and the static files:
 
-A `3`-letter abbreviation of month number `mo` or `"invalid month"` if the month doesn't exist.
-
-Here are abbreviations of all months:
-
-**My Solution:**
-
-```python
-def getMonthName(mo):
-    months = {
-        1: "Jan", 2: "Feb", 3: "Mar", 4:"Apr", 
-        5: "May", 6: "Jun", 7: "Jul", 8:"Aug", 
-        9: "Sep", 10: "Oct", 11: "Nov", 12: "Dec"
-    }
-    if mo in months.keys():
-        return months.get(mo)
-    return "invalid month"
+```console
+	mkdir -p ./frontend/{static,templates}/frontend
 ```
 
-**Result Tests**:
-
-```python
->>> getMonthName(1)
-"Jan"
->>> getMonthName(0)
-"invalid month"
->>>
-```
