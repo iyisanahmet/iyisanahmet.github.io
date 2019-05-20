@@ -34,8 +34,6 @@ share:
 urls:
     - text: About Me
       url: /about/
-    - text: My Projects
-      url: /projects/
 
 url: "https://agusmakmun.github.io"
 baseurl: ""
