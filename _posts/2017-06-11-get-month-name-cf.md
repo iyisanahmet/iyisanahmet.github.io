@@ -15,19 +15,86 @@ We already know how to create a Django app so let’s do it again:
 
 
 ```console
-	django-admin startapp frontend
+django-admin startapp frontend
 ```
-* For `mo = 1`, the output should be `getMonthName(mo) = "Jan"`,
-* For `mo = 0`, the output should be `getMonthName(mo) = "invalid month"`.
 
 Let’s also prepare a directory structure for holding the React components:
 
 ```console
-	mkdir -p ./frontend/src/components
+mkdir -p ./frontend/src/components
 ```
 and the static files:
 
 ```console
-	mkdir -p ./frontend/{static,templates}/frontend
+mkdir -p ./frontend/{static,templates}/frontend
 ```
 
+**Initialize NPM**
+
+In the root folder of the project
+
+```console
+npm init -y
+```
+
+Next up install webpack and webpack cli with:
+
+**Install webpack**
+
+```console
+npm i webpack webpack-cli --save-dev
+```
+
+Now open up package.json and configure the scripts:
+
+```javascript
+"scripts": {
+  "dev": "webpack --mode development ./project/frontend/src/index.js --output ./project/frontend/static/frontend/main.js",
+  "build": "webpack --mode production ./project/frontend/src/index.js --output ./project/frontend/static/frontend/main.js"
+}
+```
+
+Save the file and close it
+
+**Now let’s install babel for transpiling our code**
+babel-plugin-transform-class-properties is necessary for using ES6 class static properties
+```console
+npm i @babel/core babel-loader @babel/preset-env @babel/preset-react babel-plugin-transform-class-properties --save-dev
+```
+
+**Pull in React and prop-types:**
+
+```console
+npm i react react-dom prop-types --save-dev
+```
+
+Inside the project root folder, create `.babelrc` file...
+
+```javascript
+{
+    "presets": [
+        "@babel/preset-env", "@babel/preset-react"
+    ],
+    "plugins": [
+        "transform-class-properties"
+    ]
+}
+```
+
+And finally create a new file named webpack.config.jsfor configuring babel-loader:
+
+```javascript
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader"
+        }
+      }
+    ]
+  }
+};
+```
