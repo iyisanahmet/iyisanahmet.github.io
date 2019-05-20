@@ -2,7 +2,7 @@
 layout: post
 title:  "Django REST with React: setting up React and webpack"
 date:   2019-05-20 23:43:45 +0700
-categories: [python, django, react]
+categories: [python, django, react, javascript]
 ---
 
 The sweet spot for Django and React is Django REST framework for providing API endpoints.
@@ -81,7 +81,7 @@ Inside the project root folder, create `.babelrc` file...
 }
 ```
 
-And finally create a new file named webpack.config.jsfor configuring babel-loader:
+And finally create a new file named `webpack.config.js` for configuring babel-loader:
 
 ```javascript
 module.exports = {
