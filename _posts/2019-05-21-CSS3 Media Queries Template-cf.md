@@ -5,82 +5,69 @@ date:   2019-05-21 17:18:45 +0700
 categories: [css]
 ---
 
-
-**Smartphones (portrait and landscape)**
 ```css
+/*Smartphones (portrait and landscape)*/
 @media only screen 
 and (min-device-width : 320px) 
 and (max-device-width : 480px) {
 /* Styles */
 }
-```
 
-** Smartphones (landscape)**
-```css
+/*Smartphones (landscape)*/
 @media only screen 
 and (min-width : 321px) {
 /* Styles */
 }
-```
 
-**Smartphones (portrait)**
-```css
+/*Smartphones (portrait)*/
 @media only screen 
 and (max-width : 320px) {
 /* Styles */
 }
-```
 
-**iPads (portrait and landscape)**
-```css
+/*iPads (portrait and landscape)*/
 @media only screen 
 and (min-device-width : 768px) 
 and (max-device-width : 1024px) {
 /* Styles */
 }
-```
 
-**iPads (landscape)**
-```css
+/*iPads (landscape*/
 @media only screen 
 and (min-device-width : 768px) 
 and (max-device-width : 1024px) 
 and (orientation : landscape) {
 /* Styles */
 }
-```
 
-**iPads (portrait)**
-```css
+/*iPads (portrait)*/
 @media only screen 
 and (min-device-width : 768px) 
 and (max-device-width : 1024px) 
 and (orientation : portrait) {
 /* Styles */
 }
-```
 
-**Desktops and laptops**
-```css
+
+/*Desktops and laptops*/
 @media only screen 
 and (min-width : 1224px) {
 /* Styles */
 }
-```
 
-**Large screens**
-```css
+
+/*Large screens*/
 @media only screen 
 and (min-width : 1824px) {
 /* Styles */
 }
-```
 
-**iPhone 4**
-```css
+
+/*iPhone 4*/
 @media
 only screen and (-webkit-min-device-pixel-ratio : 1.5),
 only screen and (min-device-pixel-ratio : 1.5) {
 /* Styles */
 }
+
 ```
